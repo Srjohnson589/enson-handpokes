@@ -1,3 +1,12 @@
+Welcome! We’re building Ensonpokes Handpoke tattoo website.
+
+Instructions for running on your own local machine are below.
+
+
+Contributers: [Sarah Johnson](srjohnson4586@gmail.com), [Eleazar Hernandez](eleazarhernandezmusic@gmail.com), [Naomi Hutroung](nhutruong18@gmail.com)
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
