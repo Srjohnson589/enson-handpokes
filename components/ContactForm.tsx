@@ -1,5 +1,5 @@
 "use client"
-import React, {ChangeEvent, ChangeEventHandler, useState} from "react";
+import React, {ChangeEvent, useState} from "react";
 
 
 type FormData = {
