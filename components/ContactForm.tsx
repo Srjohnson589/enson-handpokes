@@ -16,7 +16,7 @@ interface FormData {
     tattooDescription: string;
     email: string;
     message: string;
-};
+}
 
 export default function ContactForm() {
     const [formData, setFormData] = useState<FormData>({
