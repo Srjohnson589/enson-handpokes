@@ -2,11 +2,11 @@
 import React, {ChangeEvent, useState} from "react";
 
 
-type FormData = {
+interface FormData {
     firstName: string;
     lastName: string;
     pronouns: string;
-    phone: string;
+    phone: string | number;
     instagram: string;
     accommodations: Array<string>;
     dateRequested: string;
@@ -34,10 +34,13 @@ export default function ContactForm() {
         email: '',
         message: '',
     });
+    const [phone, setPhone] = useState<FormData["phone"]>("")
     //you want to create a function where it looks at this array down here, and upon submit, it adds them to
     //the formData.accommodations
+
+    //I installed Jest. follow after installing - https://nextjs.org/docs/pages/building-your-application/testing/jest
     const accommodationChoices: Array<string> = ['low-key tattoo session (no small talk, music/no music, whatever you\'d like)',
-            'frequent breaks', 'I love dogs!', 'Please keep your dog away from me', 'I don\'t really care about dogs'];
+        'frequent breaks', 'I love dogs!', 'Please keep your dog away from me', 'I don\'t really care about dogs'];
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = e.target;
@@ -46,6 +49,13 @@ export default function ContactForm() {
             [name]: value,
         }));
     };
+    const phoneFormat = (item: string) => {
+        return item.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3')
+    }
+    const handlePhoneNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const formatChange = phoneFormat(e.target.value)
+        setPhone(formatChange)
+    }
 
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -53,7 +63,6 @@ export default function ContactForm() {
         console.log('Form submitted!', formData);
         //form submission logic goes here
     };
-
     return (
         <form onSubmit={handleSubmit} className="max-w-md mx-auto text-black">
             <h1 className={'text-5xl font-extrabold'}>Contact Form</h1>
@@ -115,13 +124,13 @@ export default function ContactForm() {
                     Phone:
                 </label>
                 <input
-                    //regex to make sure it is a valid number
-                    pattern="^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
                     id="phone"
                     name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
+                    value={phone}
+                    onChange={handlePhoneNumberChange}
                     className="mt-1 p-2 border rounded-md w-full"
+                    minLength={10}
+                    maxLength={10}
                     required
                 />
             </div>
