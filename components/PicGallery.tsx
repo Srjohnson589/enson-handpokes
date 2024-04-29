@@ -5,13 +5,15 @@ import Link from "next/link";
 function PicGallery() {
     return (
             <>
-                <Link href={'/work'}>Go back</Link>
                 <h1>flash</h1>
                 <p>description</p>
-                <div className="grid grid-cols-3 gap-4">
-                    <div className="...">01</div>
-                    <div class="...">02</div>
-                    <div class="...">03</div>
+                <div className="grid grid-cols-4 gap-1 w-200 bg-white p-6">
+                    <div className="bg-sky-500 h-60 w-40 m-4"></div>
+                    <div className="bg-sky-500 h-60 w-40 m-4"></div>
+                    <div className="bg-sky-500 h-60 w-40 m-4"></div>
+                    <div className="bg-sky-500 h-60 w-40 m-4"></div>
+                    <div className="bg-sky-500 h-60 w-40 m-4"></div>
+                    <div className="bg-sky-500 h-60 w-40 m-4"></div>
                 </div>
             </>
     );
