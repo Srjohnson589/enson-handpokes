@@ -1,6 +1,7 @@
 "use client"
 import React, {ChangeEvent, ChangeEventHandler, useState} from "react";
-import Image from 'next/image'
+import Image from 'next/image';
+import Link from "next/link";
 import flashPic from '../public/images/previewFlash.jpeg'
 import freshPic from '../public/images/previewFresh.jpeg'
 import healedPic from '../public/images/previewHealed.jpeg'
@@ -36,8 +37,9 @@ export default function WorkCategories() {
 
     return (
             <>
-
-                <a href="#" className={headingStyle} onMouseEnter={showFlash} onMouseLeave={showFlash}>
+            
+                <Link href={'/flash'} className={headingStyle} onMouseEnter={showFlash} onMouseLeave={showFlash}>
+                
                 {previewFlash && 
                     <Image
                     src={flashPic}
@@ -47,7 +49,8 @@ export default function WorkCategories() {
                     className={"-z-50 absolute -left-6 -bottom-8"}
                     />
                 }
-                flash</a>
+                flash
+                </Link>
 
                 <a href="#" className={headingStyle} onMouseEnter={showFresh} onMouseLeave={showFresh}>
                 {previewFresh && 
