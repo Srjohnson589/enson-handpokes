@@ -31,7 +31,7 @@ function Faqs() {
                     What is your pricing?
                 </div>
                 <div className="collapse-content"> 
-                    <p>$35 - small and simple flash only,<br></br>$45-85 medium flash/small customs,<br></br>$55-90 larger flash/medium customs,<br></br>$65-100 large customs/more detail,<br></br>$75+ very big, lots of details, or if you're loaded</p>
+                    <p>$35 - small and simple flash only,<br></br>$45-85 medium flash/small customs,<br></br>$55-90 larger flash/medium customs,<br></br>$65-100 large customs/more detail,<br></br>$75+ very big, lots of details, or if you&apos;re loaded</p>
                 </div>
             </div>
             <div className="collapse collapse-plus bg-base-200">
