@@ -13,6 +13,9 @@ export default function Home() {
             <button className={'bg-blue-500 p-2 rounded-2xl hover:opacity-70'}>
                 <Link href={'/contact'}>Contact Me</Link>
             </button>
+            <button className={'bg-blue-500 p-2 rounded-2xl hover:opacity-70'}>
+                <Link href={'/work'}>My Work</Link>
+            </button>
         </main>
     );
 }
