@@ -9,7 +9,7 @@ import artPic from '../public/images/previewArt.jpeg'
 import merchPic from '../public/images/previewMerch.jpeg'
 
 
-export default function WorkCategories() {
+function WorkCategories() {
 
     const [previewFlash, setPreviewFlash] = useState(false)
     const [previewFresh, setPreviewFresh] = useState(false)
@@ -92,3 +92,5 @@ export default function WorkCategories() {
 
     );
 }
+
+export default WorkCategories;
