@@ -1,6 +1,10 @@
+.heroparent {
+  position: relative;
+}
+
 .wavecont {
     width: 100vw;
-    height: 40vh;
+    height: 70vh;
     background: url(../public/images/tophalfwave.png);
     object-fit: cover;
     background-size: cover;
@@ -10,6 +14,7 @@
 
 @keyframes fall {
     0% {
+        height: 0;
         background-position-y: -80vh;
     }
     100% {
@@ -36,20 +41,20 @@
 } */
 
 .herocont {
-    height: 50vh;
+    height: 60vh;
     width: 100vw;
-    margin: -180px;
     z-index: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
+
 }
 
 .cont {
     width: 100%;
     height: 100%;
-    position: relative;
+    z-index: 0;
     overflow: hidden;
     filter:url("#goo");
 }

@@ -1,0 +1,79 @@
+.wrapper {
+    width: 80vw;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+  }
+
+  @property --num {
+    syntax: '<integer>';
+    inherits: false;
+    initial-value: 213;
+  }
+  
+  span.num::before {
+    counter-reset: my-counter var(--num);
+    content: counter(my-counter);
+    animation: count 5s ease-in-out infinite;
+  }
+  
+  @keyframes count {
+    to { --num: 240; }
+  }
+
+.container {
+    width: 28vmin;
+    height: 28vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0;
+    color: black;
+  }
+
+
+span.num {
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+  }
+
+span.text {
+    padding: .5em;
+    font-weight: 400;
+  }
+
+@media screen and (max-width: 1024px) {
+    .wrapper {
+      width: 85vw;
+    }
+    .container {
+      height: 26vmin;
+      width: 26vmin;
+      font-size: 12px;
+    }
+  }
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+      width: 90vw;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .container {
+      width: calc(50% - 40px);
+      height: 30vmin;
+      font-size: 14px;
+    }
+  }
+
+@media screen and (max-width: 480px) {
+    .wrapper {
+      gap: 15px;
+    }
+    .container {
+      width: 100%;
+      height: 25vmin;
+      font-size: 8px;
+    }
+  }
