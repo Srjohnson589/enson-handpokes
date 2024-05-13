@@ -15,19 +15,20 @@ function Faqs() {
         answer: "I will now only be tattooing each flash design once! If there is a piece of flash you love but has already been claimed, I am more than happy to customize/alter the design to make it unique to you!!"
     }, {
         question: "What is your pricing?",
-        answer: "$35 - small and simple flash only, $45-85 medium flash/small customs,\t$55-90 larger flash/medium customs,\n$65-100 large customs/more detail,\n$75+ very big, lots of details, or if you&apos;re loaded"
+        answer: "$35 - small and simple flash only, $45-85 medium flash/small customs,\t$55-90 larger flash/medium customs,\n$65-100 large customs/more detail,\n$75+ very big, lots of details, or if you're loaded"
     }, {
-        question: "Is your pricing negotiable?",
-        answer: "100%!! If you work in the service industry or have multiple marginalized identities, please use the lower end of the scale!\n\nI want my tattoos to be affordable for everyone! If you are struggling financially and really want a tattoo PLEASE reach out! we can def make something work!!"
+        question: "What if I am financially on the rocks?",
+        answer: "100% reach out!! If you work in the service industry or have multiple marginalized identities, please use the lower end of the scale!\n\nI want my tattoos to be affordable for everyone! If you are struggling financially and really want a tattoo PLEASE reach out! we can def make something work!!"
     }]
 
     return (
             <>
-            <div className="my-6 mx-4 bg-base-100">
+            <div className="mx-20">
+                <h6 className="p-6 text-center text-3xl font-medium">FAQs</h6>
                 {q_and_a.map((item) => (
-                <div className="collapse collapse-plus bg-base-200">
+                <div className="collapse collapse-plus border-2 border-red-800 m-4 my-6">
                     <input type="radio" name="my-accordion-3" defaultChecked /> 
-                    <div className="collapse-title text-xl font-medium">
+                    <div className="collapse-title text-lg font-medium">
                         {item.question}
                     </div>
                     <div className="collapse-content"> 

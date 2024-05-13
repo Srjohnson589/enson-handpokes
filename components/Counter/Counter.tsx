@@ -8,9 +8,9 @@ function Counter() {
     return (
         <>
         <div className="wrapper">
-            <div className="container">
+            <div className="container whitespace-nowrapS">
                 <span className="num text-3xl"></span>
-                <span className="text text-3xl">of Tattoos</span>
+                <span className="text text-3xl whitespace-nowrap">of Tattoos</span>
             </div>
         </div>
         </>

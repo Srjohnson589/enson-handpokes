@@ -6,7 +6,7 @@ import Link from "next/link";
 function Nav() {
     return (
             <>
-            <div className="navbar bg-white text-black px-10">
+            <div className="navbar bg-transparent text-black px-10">
                 <div className="navbar-start">
                     <a><Link href={'/work'}>My work</Link></a>   
                 </div>
