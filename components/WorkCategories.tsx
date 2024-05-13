@@ -33,7 +33,7 @@ function WorkCategories() {
         setPreviewMerch(!previewMerch)
     }
 
-    const headingStyle = "block text-7xl font-medium text-gray-200 z-50 relative hover:text-blue-800"
+    const headingStyle = "block my-4 text-7xl font-medium text-blue-800 z-50 relative whitespace-nowrap hover:text-blue-400"
 
     return (
             <>
@@ -44,7 +44,7 @@ function WorkCategories() {
                     width={500}
                     height={500}
                     alt="flash preview"
-                    className={"-z-50 absolute -left-6 -bottom-8"}
+                    className={"-z-50 w-500 absolute -left-6 -bottom-8 border-4 border-black"}
                     />
                 }
                 flash</Link>
@@ -54,7 +54,7 @@ function WorkCategories() {
                     <Image
                     src={freshPic}
                     alt="flash preview"
-                    className="-z-30 absolute -left-6 -bottom-8 size-80"
+                    className="-z-30 absolute -left-6 -bottom-8 size-80 border-4 border-black"
                     />
                 }
                 fresh tattoos</a>
@@ -64,7 +64,7 @@ function WorkCategories() {
                     <Image
                     src={healedPic}
                     alt="flash preview"
-                    className="-z-30 absolute -left-6 -bottom-8 size-80"
+                    className="-z-30 absolute -left-6 -bottom-8 size-80 border-4 border-black"
                     />
                 }
                 healed tattoos</a>
@@ -73,8 +73,8 @@ function WorkCategories() {
                 {previewArt && 
                     <Image
                     src={artPic}
-                    alt="flash preview"
-                    className="-z-30 absolute -left-6 -bottom-8"
+                    alt="art preview"
+                    className="-z-30 absolute -left-6 -bottom-8 border-4 border-black"
                     />
                 }
                 artwork</a>
@@ -83,8 +83,8 @@ function WorkCategories() {
                 {previewMerch && 
                     <Image
                     src={merchPic}
-                    alt="flash preview"
-                    className="-z-30 absolute -left-6 -bottom-8"
+                    alt="merch preview"
+                    className="-z-30 absolute -left-6 -bottom-8 border-4 border-black"
                     />
                 }
                 merch</a>

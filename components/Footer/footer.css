@@ -6,14 +6,14 @@
     overflow: hidden;
     line-height: 0;
     z-index: 0;
+    background: var(--foothero);
 }
 
 .custom-shape-divider-top-1715615039 svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 280px;
-    background: var(--foothero);
+    height: 200px;
 }
 
 .custom-shape-divider-top-1715615039 .shape-fill {
@@ -21,6 +21,6 @@
 }
 
 .footer-height {
-    height: 100px;
+    height: 200px;
     z-index: -1;
 }

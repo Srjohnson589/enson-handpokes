@@ -21,9 +21,9 @@
     to { --num: 240; }
   }
 
-.container {
-    width: 28vmin;
-    height: 28vmin;
+.container-c {
+    width: 20vmin;
+    height: 12vmin;
     display: flex;
     justify-content: center;
     align-items: center;

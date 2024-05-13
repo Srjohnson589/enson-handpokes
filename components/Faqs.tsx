@@ -23,7 +23,7 @@ function Faqs() {
 
     return (
             <>
-            <div className="mx-20">
+            <div className="mx-20 my-12">
                 <h6 className="p-6 text-center text-3xl font-medium">FAQs</h6>
                 {q_and_a.map((item) => (
                 <div className="collapse collapse-plus border-2 border-red-800 m-4 my-6">

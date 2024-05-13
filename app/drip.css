@@ -5,7 +5,7 @@
 }
 
 .hero-height {
-  height:200px;
+  height:180px;
 }
 
 .custom-shape-divider-bottom-1715607337 {
@@ -40,30 +40,21 @@
     }
   }
 
-.herocont {
-    height: 30vh;
-    width: 100vw;
-}
 
-.hero {
-  position: absolute;
-  bottom: -150%;
-}
-
+/* drips */
 .cont {
-    margin-top: 50vh;
     width: 100%;
     height: 90px;
     filter:url("#goo");
 }
 
 .cont .drip{
+    margin-top: 50vh;
     height: 30px;
     width: 30px;
     border-radius: 50%;
     background:var(--drip);
     position: absolute;
-    top:-70%;
     animation:falling 10s linear infinite;
   }
 

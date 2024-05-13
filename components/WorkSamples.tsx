@@ -7,14 +7,16 @@ import WorkPic from "@/public/images/landing/tinted_tattoo_room.jpg";
 function WorkSamples() {
     return (
             <>
-            <Image 
-                src={WorkPic}
-                width={450}
-                height={600}
-                alt="studio picture"
-                className="object-cover border border-black"
-            ></Image>
-            <Link href={'/work'} className="my-10"><button className="btn rounded-full px-8 bg-red-900 border-0">Check out my work</button></Link>
+            <div className="my-12 text-center">
+                <Image 
+                    src={WorkPic}
+                    width={450}
+                    height={600}
+                    alt="studio picture"
+                    className="object-cover rounded-xl shadow-md my-8"
+                ></Image>
+                <Link href={'/work'} ><button className="btn rounded-full px-8 bg-red-900 border-0 text-white my-8">Check out my work</button></Link>
+            </div>
             </>
     );
 }
