@@ -5,15 +5,17 @@ import Link from "next/link";
 function PicGallery() {
     return (
             <>
-                <h1>flash</h1>
-                <p>description</p>
-                <div className="grid grid-cols-4 gap-1 w-200 bg-white p-6">
-                    <div className="bg-sky-500 h-60 w-40 m-4"></div>
-                    <div className="bg-sky-500 h-60 w-40 m-4"></div>
-                    <div className="bg-sky-500 h-60 w-40 m-4"></div>
-                    <div className="bg-sky-500 h-60 w-40 m-4"></div>
-                    <div className="bg-sky-500 h-60 w-40 m-4"></div>
-                    <div className="bg-sky-500 h-60 w-40 m-4"></div>
+                <div className="grid grid-cols-3 gap-0 bg-transparent justify-items-center mt-28">
+                    <div className="bg-sky-500 w-40 h-60 m-4"></div>
+                    <div className="bg-sky-500 w-40 h-60 m-4"></div>
+                    <div className="bg-sky-500 w-40 h-60 m-4"></div>
+                    <div className="bg-sky-500 w-40 h-60 m-4"></div>
+                    <div className="bg-sky-500 w-40 h-60 m-4"></div>
+                    <div className="bg-sky-500 w-40 h-60 m-4"></div>
+                    <div className="bg-sky-500 w-40 h-60 m-4"></div>
+                    <div className="bg-sky-500 w-40 h-60 m-4"></div>
+                    <div className="bg-sky-500 w-40 h-60 m-4"></div>
+                    <div className="bg-sky-500 w-40 h-60 m-4"></div>
                 </div>
             </>
     );

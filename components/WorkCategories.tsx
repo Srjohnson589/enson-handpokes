@@ -1,7 +1,7 @@
 "use client"
 import React, {ChangeEvent, ChangeEventHandler, useState} from "react";
 import Image from 'next/image';
-import Link from "next/link";
+import Link from 'next/link';
 import flashPic from '../public/images/previewFlash.jpeg'
 import freshPic from '../public/images/previewFresh.jpeg'
 import healedPic from '../public/images/previewHealed.jpeg'
@@ -9,7 +9,7 @@ import artPic from '../public/images/previewArt.jpeg'
 import merchPic from '../public/images/previewMerch.jpeg'
 
 
-export default function WorkCategories() {
+function WorkCategories() {
 
     const [previewFlash, setPreviewFlash] = useState(false)
     const [previewFresh, setPreviewFresh] = useState(false)
@@ -33,31 +33,28 @@ export default function WorkCategories() {
         setPreviewMerch(!previewMerch)
     }
 
-    const headingStyle = "block text-7xl font-medium text-gray-200 z-50 relative hover:text-blue-800"
+    const headingStyle = "block my-4 text-7xl font-medium text-blue-800 z-50 relative whitespace-nowrap hover:text-blue-400"
 
     return (
             <>
-            
                 <Link href={'/flash'} className={headingStyle} onMouseEnter={showFlash} onMouseLeave={showFlash}>
-                
                 {previewFlash && 
                     <Image
                     src={flashPic}
                     width={500}
                     height={500}
                     alt="flash preview"
-                    className={"-z-50 absolute -left-6 -bottom-8"}
+                    className={"-z-50 w-500 absolute -left-6 -bottom-8 border-4 border-black"}
                     />
                 }
-                flash
-                </Link>
+                flash</Link>
 
                 <a href="#" className={headingStyle} onMouseEnter={showFresh} onMouseLeave={showFresh}>
                 {previewFresh && 
                     <Image
                     src={freshPic}
                     alt="flash preview"
-                    className="-z-30 absolute -left-6 -bottom-8 size-80"
+                    className="-z-30 absolute -left-6 -bottom-8 size-80 border-4 border-black"
                     />
                 }
                 fresh tattoos</a>
@@ -67,7 +64,7 @@ export default function WorkCategories() {
                     <Image
                     src={healedPic}
                     alt="flash preview"
-                    className="-z-30 absolute -left-6 -bottom-8 size-80"
+                    className="-z-30 absolute -left-6 -bottom-8 size-80 border-4 border-black"
                     />
                 }
                 healed tattoos</a>
@@ -76,8 +73,8 @@ export default function WorkCategories() {
                 {previewArt && 
                     <Image
                     src={artPic}
-                    alt="flash preview"
-                    className="-z-30 absolute -left-6 -bottom-8"
+                    alt="art preview"
+                    className="-z-30 absolute -left-6 -bottom-8 border-4 border-black"
                     />
                 }
                 artwork</a>
@@ -86,8 +83,8 @@ export default function WorkCategories() {
                 {previewMerch && 
                     <Image
                     src={merchPic}
-                    alt="flash preview"
-                    className="-z-30 absolute -left-6 -bottom-8"
+                    alt="merch preview"
+                    className="-z-30 absolute -left-6 -bottom-8 border-4 border-black"
                     />
                 }
                 merch</a>
@@ -95,3 +92,5 @@ export default function WorkCategories() {
 
     );
 }
+
+export default WorkCategories;

@@ -1,21 +1,21 @@
-import Image from "next/image";
-import Link from "next/link";
 
-export default function Home() {
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Counter from "@/components/Counter/Counter";
+import Faqs from "@/components/Faqs";
+import WorkSamples from "@/components/WorkSamples";
+
+function Home() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <div className={'text-4xl font-extrabold'}>
-                Enson Handpokes Home Page
-                <br/>
-            </div>
-
-            {/*this can be moved anywhere*/}
-            <button className={'bg-blue-500 p-2 rounded-2xl hover:opacity-70'}>
-                <Link href={'/contact'}>Contact Me</Link>
-            </button>
-            <button className={'bg-blue-500 p-2 rounded-2xl hover:opacity-70'}>
-                <Link href={'/work'}>My Work</Link>
-            </button>
+        <main className="flex min-h-screen flex-col items-center mt-72">
+            <h1 className="my-8 text-4xl text-black"><span className="px-6">HAND.</span><span className="px-6">POKE.</span><span className="px-6">TATTOO.</span></h1>
+            <About/>
+            <Counter/>
+            <WorkSamples/>
+            <Faqs/>
+            <br className="size-lg"></br>
         </main>
     );
 }
+
+export default Home;
