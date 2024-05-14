@@ -28,11 +28,11 @@ function Faqs() {
                 {q_and_a.map((item) => (
                 <div className="collapse collapse-plus border-2 border-red-800 m-4 my-6">
                     <input type="radio" name="my-accordion-3" defaultChecked /> 
-                    <div className="collapse-title text-lg font-medium">
+                    <div key={item.question} className="collapse-title text-lg font-medium">
                         {item.question}
                     </div>
                     <div className="collapse-content"> 
-                        <p>{item.answer}</p>
+                        <p key={item.answer}>{item.answer}</p>
                     </div>
                 </div>
                 )
