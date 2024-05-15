@@ -8,8 +8,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
-  --drip: linear-gradient(180deg,  rgb(165, 13, 43) 0%, rgba(120,11,11,1) 54%, rgb(97, 9, 9) 93%, rgba(2,0,36,1) 99%);
-  --foothero: linear-gradient(0deg,  rgb(165, 13, 43) 0%, rgba(120,11,11,1) 54%, rgb(97, 9, 9) 98%, rgba(2,0,36,1) 99%);
+  --drip: linear-gradient(180deg,  rgb(165, 13, 43) 0%, rgba(120,11,11,1) 54%, rgb(97, 9, 9) 100%);
+  --foothero: linear-gradient(0deg,  rgb(165, 13, 43) 0%, rgba(120,11,11,1) 54%, rgb(97, 9, 9) 100%);
 
 }
 

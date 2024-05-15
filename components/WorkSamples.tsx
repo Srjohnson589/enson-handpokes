@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import WorkPic from "@/public/images/landing/tinted_tattoo_room.jpg";
+import WorkPic from "@/public/images/landing/ensonpokeswall.jpg";
 
 function WorkSamples() {
     return (
@@ -10,7 +10,7 @@ function WorkSamples() {
             <div className="my-12 text-center">
                 <Image 
                     src={WorkPic}
-                    width={450}
+                    width={600}
                     height={600}
                     alt="studio picture"
                     className="object-cover rounded-xl shadow-md my-8"

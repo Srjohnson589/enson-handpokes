@@ -1,5 +1,7 @@
 "use client"
 import React from "react";
+import Image from "next/image";
+import TattooRoom from "@/public/images/landing/tinted_tattoo_room.jpg"
 
 interface QA {
     question: string,
@@ -23,15 +25,20 @@ function Faqs() {
 
     return (
             <>
-            <div className="mx-20 my-12">
-                <h6 className="p-6 text-center text-3xl font-medium">FAQs</h6>
+            <div className="relative">
+                <Image
+                    src={TattooRoom}
+                    alt="enson's tattoo room"
+                    className="absolute top-0 opacity-80 h-full">
+                </Image>
+                <h6 className="relative p-6 text-center text-6xl font-medium text-blue-500 bg-transparent" >FAQs</h6>
                 {q_and_a.map((item) => (
-                <div key={item.question} className="collapse collapse-plus border-2 border-red-800 m-4 my-6">
+                <div key={item.question} className="mx-auto my-6 w-2/3 collapse collapse-plus">
                     <input type="radio" name="my-accordion-3" defaultChecked /> 
-                    <div className="collapse-title text-lg font-medium">
+                    <div className="collapse-title text-lg font-medium glass">
                         {item.question}
                     </div>
-                    <div className="collapse-content"> 
+                    <div className="collapse-content text-black bg-white"> 
                         <p>{item.answer}</p>
                     </div>
                 </div>
