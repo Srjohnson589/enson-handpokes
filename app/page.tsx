@@ -6,7 +6,7 @@ import WorkSamples from "@/components/WorkSamples";
 
 function Home() {
     return (
-        <main className="flex min-h-screen flex-col items-center mt-72">
+        <main className="flex min-h-screen flex-col items-center">
             <Hero/>
             <About/>
             <Counter/>

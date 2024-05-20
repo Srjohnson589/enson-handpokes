@@ -1,0 +1,18 @@
+
+.heroparent {
+  position: relative;
+}
+
+.custom-shape-divider-bottom-1715607337 {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  width: 100%;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1715607337 svg {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
