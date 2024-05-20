@@ -6,6 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 function Nav() {
+
+
+
     return (
             <>
             <div className="heroparent">
@@ -28,9 +31,7 @@ function Nav() {
                     src={EnsonWall}
                     className="h-full relative"
                     >
-                </Image>
-             <div className="cont">
-            </div>  
+                </Image> 
             </div>
             </>
     );

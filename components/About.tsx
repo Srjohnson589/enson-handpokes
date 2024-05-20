@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import Image from "next/image";
+import RainbowBackground from "@/public/images/landing/rainbowbackground.jpeg"
 import ProfilePic from "../public/images/landing/profilepic.png";
 
 function About() {
@@ -9,7 +10,11 @@ function About() {
 
     return (
             <>
-            <div className="flex bg-blue-100 rounded-xl mx-8 p-8 my-12 align-center justify-between">
+            <Image
+                alt="rainbow background"
+                src={RainbowBackground}>
+            </Image>
+            <div className="flex rounded-xl mx-8 px-8 align-center justify-between">
                 <div className="mr-4 w-full place-self-center">
                 <Image
                     src={ProfilePic}
