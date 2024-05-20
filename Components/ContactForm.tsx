@@ -1,6 +1,8 @@
 "use client"
-import React, {ChangeEvent, useState} from "react";
-
+import React, {ChangeEvent, useEffect, useRef, useState} from "react";
+import {submitData} from '@/app/contact/actions/submit-actions';
+import {useFormStatus, useFormState} from "react-dom";
+import {redirect} from "next/navigation";
 
 interface FormData {
     firstName: string;
@@ -16,6 +18,26 @@ interface FormData {
     tattooDescription: string;
     email: string;
     message: string;
+}
+
+const initialState = {
+    message: '',
+    errors: undefined,
+    fieldValues: {
+        firstName: '',
+        lastName: '',
+        pronouns: '',
+        phone: '',
+        instagram: '',
+        accommodations: [],
+        dateRequested: '',
+        tattooType: '',
+        tattooSize: 0,
+        tattooPlacement: '',
+        tattooDescription: '',
+        email: '',
+        message: '',
+    }
 }
 
 export default function ContactForm() {
@@ -34,14 +56,14 @@ export default function ContactForm() {
         email: '',
         message: '',
     });
-    const [phone, setPhone] = useState<FormData["phone"]>("")
+    const [formState, formAction] = useFormState(submitData, initialState);
     //you want to create a function where it looks at this array down here, and upon submit, it adds them to
     //the formData.accommodations
 
-    //I installed Jest. follow after installing - https://nextjs.org/docs/pages/building-your-application/testing/jest
     const accommodationChoices: Array<string> = ['low-key tattoo session (no small talk, music/no music, whatever you\'d like)',
         'frequent breaks', 'I love dogs!', 'Please keep your dog away from me', 'I don\'t really care about dogs'];
 
+    //add this to a utils maybe?
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = e.target;
         setFormData((prevData) => ({
@@ -54,18 +76,44 @@ export default function ContactForm() {
     }
     const handlePhoneNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
         const formatChange = phoneFormat(e.target.value)
-        setPhone(formatChange)
+        setFormData((prevData) => ({
+            ...prevData,
+            phone: formatChange,
+        }));
+    }
+    const dateFormat = (item: string) => {
+        return item.replace(/(\d{2})(\d{2})(\d{4})/, '$1/$2/$3')
+    }
+    const handleDateChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const formatChange = dateFormat(e.target.value)
+        setFormData((prevData) => ({
+            ...prevData,
+            dateRequested: formatChange,
+        }))
     }
 
+    function Submit() {
+        const {pending} = useFormStatus();
+        return <button
+            className="inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none"
+            disabled={pending}>{pending ? "Submitting..." : "Submit"}</button>
+    }
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        console.log('Form submitted!', formData);
-        //form submission logic goes here
-    };
+    const formRef = useRef<HTMLFormElement>(null)
+
+    useEffect(() => {
+        if (formState.message === "Success!") {
+            console.log(formState.message)
+            formRef.current?.reset();
+            alert('Email sent!')
+            redirect('/')
+        }
+    }, [formState]);
+
     return (
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto text-black">
+        <form action={formAction} ref={formRef} className="max-w-md mx-auto text-black">
             <h1 className={'text-5xl font-extrabold'}>Contact Form</h1>
+            {formState.message === 'Success'}
             <div className="mb-4">
                 <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
                     First Name:
@@ -126,9 +174,10 @@ export default function ContactForm() {
                 <input
                     id="phone"
                     name="phone"
-                    value={phone}
+                    value={formData.phone}
                     onChange={handlePhoneNumberChange}
                     className="mt-1 p-2 border rounded-md w-full"
+                    placeholder="(999) 999-9999"
                     minLength={10}
                     maxLength={10}
                     required
@@ -141,6 +190,7 @@ export default function ContactForm() {
                 <input
                     id="instagram"
                     name="instagram"
+                    placeholder="@insta"
                     value={formData.instagram}
                     onChange={handleChange}
                     className="mt-1 p-2 border rounded-md w-full"
@@ -153,7 +203,8 @@ export default function ContactForm() {
                 <div>
                     {accommodationChoices.map((value, index) => {
                         return (
-                            <ul id={value} className={'text-white'} key={index}><input type={'checkbox'}/> {value}</ul>)
+                            <ul id={value} className={'text-white'} key={index}><input type={'checkbox'}/> {value}
+                            </ul>)
                     })}
                 </div>
             </div>
@@ -164,12 +215,13 @@ export default function ContactForm() {
                         Date Requested:
                     </label>
                     <input
-                        pattern="\d{1,2}\/\d{1,2}\/\d{2,4}"
+                        minLength={8}
+                        maxLength={8}
                         id="dateRequested"
                         name="dateRequested"
                         placeholder="11/25/1999"
                         value={formData.dateRequested}
-                        onChange={handleChange}
+                        onChange={handleDateChange}
                         className="mt-1 p-2 border rounded-md w-full"
                     />
                 </div>
@@ -178,8 +230,8 @@ export default function ContactForm() {
                         Tattoo Type:
                     </label>
                     <input
-                        id="instagram"
-                        name="instagram"
+                        id="tattooType"
+                        name="tattooType"
                         value={formData.tattooType}
                         onChange={handleChange}
                         className="mt-1 p-2 border rounded-md w-full"
@@ -236,11 +288,7 @@ export default function ContactForm() {
                     className="mt-1 p-2 border rounded-md w-full"
                 />
             </div>
-            <button
-                type="submit"
-                className="inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
-                Submit
-            </button>
+            <Submit/>
         </form>
     );
 }

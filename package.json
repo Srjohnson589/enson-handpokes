@@ -4,19 +4,25 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "email": "email dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "next": "14.2.0",
-    "react": "^18",
-    "react-dom": "^18"
+    "nodemailer": "^6.9.13",
+    "react": "^0.0.0-experimental-d3ce0d3ea9-20240520",
+    "react-dom": "^0.0.0-experimental-d3ce0d3ea9-20240520",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.4",
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.15",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
