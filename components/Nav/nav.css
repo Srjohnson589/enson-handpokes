@@ -1,11 +1,12 @@
 
 .heroparent {
   position: relative;
+  color: var(--hero-text);
 }
 
 .custom-shape-divider-bottom-1715607337 {
   position: absolute;
-  z-index: 10;
+  z-index: 1;
   bottom: 0;
   width: 100%;
   line-height: 0;

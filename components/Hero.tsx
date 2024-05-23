@@ -3,16 +3,34 @@ import React from "react";
 import "./Nav/nav.css";
 
 function Hero() {
-    const threewords:String[] = ['INCLUSIVITY', 'INTENTIONALITY', 'SAFETY']
+    const threewords:String[] = ['INCLUSIVITY', 'SAFETY', 'INTENTIONALITY']
+
+    const heroStyle:React.CSSProperties = {
+        color: '#08367C',
+        width: '100%',
+        textAlign: 'center',
+        fontFamily: 'Space Grotesk, sans-serif',
+        fontSize: '60px',
+        fontStyle: 'normal',
+        fontWeight: 600,
+        lineHeight: 'normal',
+        textTransform: 'uppercase',
+        background: '#A3DCFF'
+    }
+
+    const threeWordStyle:React.CSSProperties = {
+        fontSize: '36px'
+    }
 
     return (
             <>
-            <div className="w-full bg-[#90c8ff] text-center text-4xl text-black">
-                <h2 className="text-5xl p-6">{threewords[0]}</h2>
-                <h2 className="text-5xl p-6">{threewords[1]}</h2>
-                <h2 className="text-5xl p-6 pb-24">{threewords[2]}</h2>
+            <div style={heroStyle}>Artisanal Handpoke <br /> Tattoo Creations</div>
+            <div className="py-4 pb-36 w-full sm:whitespace-wrap sm:flex-column" style={heroStyle}>
+                <span className="p-6" style={threeWordStyle}>{threewords[0]}</span>
+                <span className="p-6" style={threeWordStyle}>{threewords[1]}</span>
+                <span className="p-6 pb-24" style={threeWordStyle}>{threewords[2]}</span>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(144, 200, 255)" fill-opacity="1" d="M0,0L205.7,96L411.4,0L617.1,160L822.9,32L1028.6,64L1234.3,0L1440,64L1440,0L1234.3,0L1028.6,0L822.9,0L617.1,0L411.4,0L205.7,0L0,0Z"></path></svg>
+            {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#A3DCFF" fillOpacity="1" d="M0,0L205.7,96L411.4,0L617.1,160L822.9,32L1028.6,64L1234.3,0L1440,64L1440,0L1234.3,0L1028.6,0L822.9,0L617.1,0L411.4,0L205.7,0L0,0Z"></path></svg> */}
             </>
     );
 }

@@ -25,26 +25,26 @@ function Faqs() {
 
     return (
             <>
-            <div className="relative">
-                <Image
-                    src={TattooRoom}
-                    alt="enson's tattoo room"
-                    className="absolute top-0 opacity-80 h-full">
-                </Image>
-                <h6 className="relative p-6 text-center text-6xl font-medium text-blue-500 bg-transparent" >FAQs</h6>
-                {q_and_a.map((item) => (
-                <div key={item.question} className="mx-auto my-6 w-2/3 collapse collapse-plus">
-                    <input type="radio" name="my-accordion-3" defaultChecked /> 
-                    <div className="collapse-title text-lg font-medium glass">
-                        {item.question}
+                <div className="relative">
+                    <Image
+                        src={TattooRoom}
+                        alt="enson's tattoo room"
+                        className="absolute top-0 opacity-80 h-full -z-10">
+                    </Image>
+                    <h6 className="relative p-6 text-center text-6xl font-medium text-blue-500 bg-transparent" >FAQs</h6>
+                    {q_and_a.map((item) => (
+                    <div key={item.question} className="mx-auto my-6 w-2/3 collapse collapse-plus">
+                        <input type="radio" name="my-accordion-3" defaultChecked /> 
+                        <div className="collapse-title text-lg font-medium glass">
+                            {item.question}
+                        </div>
+                        <div className="collapse-content text-black bg-white"> 
+                            <p>{item.answer}</p>
+                        </div>
                     </div>
-                    <div className="collapse-content text-black bg-white"> 
-                        <p>{item.answer}</p>
-                    </div>
+                    )
+                    )}
                 </div>
-                )
-                )}
-            </div>
             </>
     );
 }
