@@ -25,25 +25,28 @@ function Faqs() {
 
     return (
             <>
-                <div className="relative">
+                <div className="relative font-sans text-black">
                     <Image
                         src={TattooRoom}
                         alt="enson's tattoo room"
                         className="absolute top-0 opacity-80 h-full -z-10">
                     </Image>
-                    <h6 className="relative p-6 text-center text-6xl font-medium text-blue-500 bg-transparent" >FAQs</h6>
-                    {q_and_a.map((item) => (
-                    <div key={item.question} className="mx-auto my-6 w-2/3 collapse collapse-plus">
-                        <input type="radio" name="my-accordion-3" defaultChecked /> 
-                        <div className="collapse-title text-lg font-medium glass">
-                            {item.question}
+                    <div className="w-2/3 mx-auto ">
+                        <h6 className="p-6 text-left text-4xl font-medium bg-transparent">FAQs</h6>
+                        <hr className="ml-4 w-1/5 border-black"></hr>
+                        {q_and_a.map((item) => (
+                        <div key={item.question} className="my-6 collapse collapse-plus">
+                            <input type="radio" name="my-accordion-3" defaultChecked /> 
+                            <div className="collapse-title text-lg font-medium">
+                                {item.question}
+                            </div>
+                            <div className="collapse-content text-black bg-white"> 
+                                <p>{item.answer}</p>
+                            </div>
                         </div>
-                        <div className="collapse-content text-black bg-white"> 
-                            <p>{item.answer}</p>
-                        </div>
+                        )
+                        )}
                     </div>
-                    )
-                    )}
                 </div>
             </>
     );

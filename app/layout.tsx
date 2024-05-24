@@ -1,10 +1,28 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav/Nav";
 import Footer from "@/components/Footer/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Inter, BioRhyme, Space_Grotesk } from 'next/font/google';
+ 
+export const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter'
+})
+ 
+export const biorhyme = BioRhyme({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-biorhyme'
+})
+
+export const space_grotesk = Space_Grotesk({
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-space'
+  })
+
 
 export const metadata: Metadata = {
   title: "Enson Handpokes",
@@ -18,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${biorhyme.variable} ${space_grotesk.variable}`}>
         <Nav/>
         {children}
         <Footer/>

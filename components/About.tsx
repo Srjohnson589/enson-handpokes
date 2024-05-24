@@ -1,8 +1,9 @@
 "use client"
 import React from "react";
 import Image from "next/image";
-import RainbowBackground from "@/public/images/landing/gradient bg 3.png"
+import Rainbow from "../public/images/landing/lowerhalf.jpg"
 import ProfilePic from "../public/images/landing/profilepic.png";
+
 
 function About() {
     const abouttitle = "About the Artist"
@@ -10,29 +11,19 @@ function About() {
 
     return (
             <>
-                {/* <hr className="border-2 border-sky-500"></hr>
+            <div  className="w-3/4 flex align-center justify-center" style={{backgroundImage: `url(${Rainbow})`}}>
                 <Image
-                    alt="rainbow background"
-                    src={RainbowBackground}
-                    className="">
+                    src={ProfilePic}
+                    alt="profile picture"
+                    width={300}
+                    height={200}
+                    className={"m-4 max-h-80 rounded-xl"}>
                 </Image>
-                <hr className="border-2 border-green-500"></hr> */}
-                <div style={{ backgroundImage: `url(${RainbowBackground})`, height:'500px'}}>
-                <div  className="w-3/4 flex align-center justify-center">
-                    <Image
-                        src={ProfilePic}
-                        alt="profile picture"
-                        width={300}
-                        height={200}
-                        className={"m-4 object-fit sm:object-scale-down rounded-xl"}>
-                    </Image>
-                    <div className="m-4 w-full">
-                        <h6 className="font-bold pb-2">{abouttitle}</h6>
-                        <p className="text-md">{bio}</p>
-                    </div>
+                <div className="font-mono m-4 flex flex-col items-stretch">
+                    <h6 className="font-bold pb-2 text-black">{abouttitle}</h6>
+                    <p className="text-md text-black">{bio}</p>
                 </div>
-                </div>
-
+            </div>
             </>
     );
 }

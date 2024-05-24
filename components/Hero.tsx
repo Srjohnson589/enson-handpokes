@@ -9,7 +9,6 @@ function Hero() {
         color: '#08367C',
         width: '100%',
         textAlign: 'center',
-        fontFamily: 'Space Grotesk, sans-serif',
         fontSize: '60px',
         fontStyle: 'normal',
         fontWeight: 600,
@@ -19,13 +18,13 @@ function Hero() {
     }
 
     const threeWordStyle:React.CSSProperties = {
-        fontSize: '36px'
+        fontSize: '28px'
     }
 
     return (
             <>
-            <div style={heroStyle}>Artisanal Handpoke <br /> Tattoo Creations</div>
-            <div className="py-4 pb-36 w-full sm:whitespace-wrap sm:flex-column" style={heroStyle}>
+            <div style={heroStyle} className="font-sans">Artisanal Handpoke <br /> Tattoo Creations</div>
+            <div className="font-serif py-4 w-full sm:whitespace-wrap sm:flex-column" style={heroStyle}>
                 <span className="p-6" style={threeWordStyle}>{threewords[0]}</span>
                 <span className="p-6" style={threeWordStyle}>{threewords[1]}</span>
                 <span className="p-6 pb-24" style={threeWordStyle}>{threewords[2]}</span>
