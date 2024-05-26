@@ -2,11 +2,11 @@
 import React, {ChangeEvent, ChangeEventHandler, useState} from "react";
 import Image from 'next/image';
 import Link from 'next/link';
-import flashPic from '../public/images/previewFlash.jpeg'
-import freshPic from '../public/images/previewFresh.jpeg'
-import healedPic from '../public/images/previewHealed.jpeg'
-import artPic from '../public/images/previewArt.jpeg'
-import merchPic from '../public/images/previewMerch.jpeg'
+import flashPic from '../public/images/previews/previewFlash.jpeg'
+import freshPic from '../public/images/previews/previewFresh.jpeg'
+import healedPic from '../public/images/previews/previewHealed.jpeg'
+import artPic from '../public/images/previews/previewArt.jpeg'
+import merchPic from '../public/images/previews/previewMerch.jpeg'
 
 
 function WorkCategories() {

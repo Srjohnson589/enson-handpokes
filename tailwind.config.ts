@@ -14,7 +14,7 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-inter)'],
         mono: ['var(--font-space)'],
-        serif: ['var(--font-biorhyme)']
+        serif: ['var(--font-dosis)']
       },
     },
   },

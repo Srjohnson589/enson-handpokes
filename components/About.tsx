@@ -1,9 +1,13 @@
 "use client"
 import React from "react";
 import Image from "next/image";
-import Rainbow from "../public/images/landing/lowerhalf.jpg"
+import Counter from "@/components/Counter/Counter"
+import Rainbow from "../public/images/landing/gradient bg.png";
 import ProfilePic from "../public/images/landing/profilepic.png";
-
+import Handman from "../public/images/cutouts/handman.png";
+import Slug from "../public/images/cutouts/slug.png";
+import Raccoon from "../public/images/cutouts/raccoontattoo circle.png";
+import CrocDog from "../public/images/cutouts/crocdog elbow.png";
 
 function About() {
     const abouttitle = "About the Artist"
@@ -11,17 +15,57 @@ function About() {
 
     return (
             <>
-            <div  className="w-3/4 flex align-center justify-center" style={{backgroundImage: `url(${Rainbow})`}}>
+            <div className="relative">
                 <Image
-                    src={ProfilePic}
-                    alt="profile picture"
-                    width={300}
-                    height={200}
-                    className={"m-4 max-h-80 rounded-xl"}>
+                    src={Rainbow}
+                    alt="splotchy background"
+                    width={1500}
+                    className="-my-20">
                 </Image>
-                <div className="font-mono m-4 flex flex-col items-stretch">
-                    <h6 className="font-bold pb-2 text-black">{abouttitle}</h6>
-                    <p className="text-md text-black">{bio}</p>
+                <div className="absolute top-96">
+                    <div className="flex px-24">
+                        <Image
+                            src={ProfilePic}
+                            alt="profile picture"
+                            width={400}
+                            height={400}
+                            className={"m-4 rounded-xl"}>
+                        </Image>
+                        <div className="font-mono m-4 flex flex-col items-stretch">
+                            <h6 className="font-bold text-3xl pb-2 text-black">{abouttitle}</h6>
+                            <p className="text-lg vertical-justify text-black">{bio}</p>
+                        </div>
+                    </div>
+                    <div className="flex py-16 max-w-[1100]">
+                        <Image
+                            src={CrocDog}
+                            alt="tattoo of a dauchaund with croc hat on head"
+                            width={400}
+                            height={400}
+                            className={"m-4 rounded-xl rotate-6"}>
+                        </Image>
+                        <Image
+                                src={Handman}
+                                alt="flash perspective drawing of little man with big hands"
+                                width={400}
+                                height={400}
+                                className={"m-4 rounded-xl"}>
+                        </Image>
+                        <Image
+                                src={Raccoon}
+                                alt="tattoo of a little raccoon sitting with shaded circle eyes and black and white striped tail"
+                                width={200}
+                                className={"m-4 -mt-20 h-72 rounded-xl"}>
+                        </Image>
+                        <Image
+                                src={Slug}
+                                alt="flash drawing of a little slug"
+                                width={400}
+                                height={400}
+                                className={"m-4 rounded-xl"}>
+                        </Image>
+                    </div>
+                    <Counter/>
                 </div>
             </div>
             </>

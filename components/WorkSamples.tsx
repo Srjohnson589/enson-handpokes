@@ -9,15 +9,15 @@ import TattooRoom from "@/public/images/landing/tinted_tattoo_room.jpg"
 function WorkSamples() {
     return (
             <>
-                <div className="text-center">
+                <div className="text-center -mt-80">
                     <Image 
                         src={TattooRoom}
-                        width={600}
-                        height={600}
+                        width={800}
+                        height={800}
                         alt="studio picture"
                         className="object-cover rounded-xl shadow-md my-8"
                     ></Image>
-                    <Link href={'/work'} ><button className="btn rounded-full px-8 bg-teal-900 border-0 text-white">Check out my work</button></Link>
+                    <Link href={'/work'} ><button className="btn rounded-full px-8 my-4 bg-[#FFA957] border-2 text-black text-xl">Check out my work</button></Link>
                 </div>
             </>
     );
