@@ -1,6 +1,6 @@
 //server action
 'use server'
-import {transporter} from "../../../../lib/email-helper";
+import {transporter} from "@/lib/email-helper";
 
 
 export async function submitData(prevState: any, formData: FormData) {
