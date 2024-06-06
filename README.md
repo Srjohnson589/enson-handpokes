@@ -3,7 +3,7 @@ Welcome! We’re building Ensonpokes Handpoke tattoo website.
 Instructions for running on your own local machine are below.
 
 
-Contributers: [Sarah Johnson](srjohnson4586@gmail.com), [Eleazar Hernandez](eleazarhernandezmusic@gmail.com), [Naomi Hutroung](nhutruong18@gmail.com)
+Contributers: [Sarah Johnson](srjohnson4586@gmail.com), [Eleazar Hernandez](eleazarhernandezmusic@gmail.com), [Rutvi Karkare](rutvik02@gmail.com)
 
 ---
 
